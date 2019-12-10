@@ -1,0 +1,1328 @@
+{
+    "author": "Pascal Sartoretti",
+    "design model": {
+        "display backgrounds": [
+            {
+                "image name": "",
+                "name": "Display Background",
+                "static items": [
+                    {
+                        "color": {
+                            "RGB": "0xFFFFFF",
+                            "User Name": "0xFFFFFF"
+                        },
+                        "filled": true,
+                        "height": 272,
+                        "static": {
+                            "item": {
+                                "handle name": "",
+                                "type": "RectangleType"
+                            }
+                        },
+                        "width": 480,
+                        "x": 0,
+                        "y": 0
+                    }
+                ]
+            },
+            {
+                "image name": "",
+                "name": "gray",
+                "static items": [
+                    {
+                        "color": {
+                            "RGB": "0x606060",
+                            "User Name": "0x606060"
+                        },
+                        "filled": true,
+                        "height": 272,
+                        "static": {
+                            "item": {
+                                "handle name": "",
+                                "type": "RectangleType"
+                            }
+                        },
+                        "width": 480,
+                        "x": 0,
+                        "y": 0
+                    }
+                ]
+            }
+        ],
+        "display pages": [
+            {
+                "background": "Display Background",
+                "height": 272,
+                "name": "startup",
+                "relationships": [
+                ],
+                "width": 480,
+                "windows": [
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Rev 1.0a",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 17,
+                                "item": {
+                                    "handle name": "ghLabel_1",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 78,
+                                "x": 365,
+                                "y": 236
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "(sap) PTR - 2018",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 21,
+                                "item": {
+                                    "handle name": "ghLabel",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 113,
+                                "x": 365,
+                                "y": 250
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Start system with one token send",
+                            "widget style name": "red_green",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 36,
+                                "item": {
+                                    "handle name": "btnToken",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 347,
+                                "y": 99
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Start system without token",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 36,
+                                "item": {
+                                    "handle name": "btnStart",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 347,
+                                "y": 35
+                            }
+                        }
+                    },
+                    {
+                        "auto size": true,
+                        "image name": "token_w",
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": false,
+                                "font name": "",
+                                "height": 205,
+                                "item": {
+                                    "handle name": "ghImagebox",
+                                    "type": "ImageboxType"
+                                },
+                                "visible": true,
+                                "width": 300,
+                                "x": 10,
+                                "y": 19
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "background": "gray",
+                "height": 272,
+                "name": "mainDisplay",
+                "relationships": [
+                ],
+                "width": 480,
+                "windows": [
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Received message:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "ghLabel_4",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 128,
+                                "x": 243,
+                                "y": 3
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Message to send:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "ghLabel_2",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 3,
+                                "y": 3
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Select destination:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 16,
+                                "item": {
+                                    "handle name": "ghLabel_3",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 104,
+                                "x": 3,
+                                "y": 247
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "4",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnDestination",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 110,
+                                "x": 110,
+                                "y": 243
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Time is: --:--:--",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 15,
+                                "item": {
+                                    "handle name": "lblTime",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 243,
+                                "y": 248
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Config",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnConfiguration",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 102,
+                                "x": 374,
+                                "y": 243
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "background": "gray",
+                "height": 272,
+                "name": "configDisplay",
+                "relationships": [
+                ],
+                "width": 480,
+                "windows": [
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Station control:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "ghLabel_5",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 136,
+                                "x": 7,
+                                "y": 4
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Debug address",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "ghLabel_8",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 100,
+                                "x": 197,
+                                "y": 183
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Debug SAPI",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "ghLabel_7",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 80,
+                                "x": 197,
+                                "y": 151
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Debug control:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "ghLabel_6",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 197,
+                                "y": 4
+                            }
+                        }
+                    },
+                    {
+                        "checked": true,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Station connected",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 19,
+                                "item": {
+                                    "handle name": "cbConnectoed",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 156,
+                                "x": 7,
+                                "y": 36
+                            }
+                        }
+                    },
+                    {
+                        "checked": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Broadcast time",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "cbBroadcastTime",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 7,
+                                "y": 61
+                            }
+                        }
+                    },
+                    {
+                        "checked": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Auto token (caution)",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "cbAutoToken",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 160,
+                                "x": 7,
+                                "y": 86
+                            }
+                        }
+                    },
+                    {
+                        "checked": true,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Debug station connected",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "cbDebugConnected",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 212,
+                                "x": 197,
+                                "y": 36
+                            }
+                        }
+                    },
+                    {
+                        "checked": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Receive CRC error",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "cbRecCRCError",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 160,
+                                "x": 197,
+                                "y": 61
+                            }
+                        }
+                    },
+                    {
+                        "checked": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Send a bad CRC",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 20,
+                                "item": {
+                                    "handle name": "cbSendCRCError",
+                                    "type": "CheckboxType"
+                                },
+                                "visible": true,
+                                "width": 160,
+                                "x": 197,
+                                "y": 86
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Send debug message",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnSendDebug",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 160,
+                                "x": 197,
+                                "y": 111
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Local address is: 2",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "lblAddress",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 7,
+                                "y": 151
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Debug mode is: ON",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "lblDebug",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 132,
+                                "x": 7,
+                                "y": 183
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "-",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnSAPIMinus",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 314,
+                                "y": 147
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "-",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnADDRESSMinus",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 314,
+                                "y": 183
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "  1",
+                            "widget style name": "red_green",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "lblSAPI",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 354,
+                                "y": 147
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "  7",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "lblADDR",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 354,
+                                "y": 183
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "+",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnSAPIPlus",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 395,
+                                "y": 148
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "+",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnADDRESSPlus",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 25,
+                                "x": 395,
+                                "y": 183
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Back",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "btnBack",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 80,
+                                "x": 394,
+                                "y": 243
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "background": "gray",
+                "height": 272,
+                "name": "addressSelectDisplay",
+                "relationships": [
+                ],
+                "width": 480,
+                "windows": [
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Select destination address:",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "ghLabel_11",
+                                    "type": "LabelType"
+                                },
+                                "visible": true,
+                                "width": 221,
+                                "x": 15,
+                                "y": 4
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": true,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Station 1",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 52,
+                                "y": 73
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 1,
+                            "text": "Station 2",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_1",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 52,
+                                "y": 103
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 2,
+                            "text": "Station 3",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_2",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 52,
+                                "y": 133
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 3,
+                            "text": "Station 4",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_3",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 52,
+                                "y": 163
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 4,
+                            "text": "Station 5",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_4",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 147,
+                                "y": 73
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 5,
+                            "text": "Station 6",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_5",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 147,
+                                "y": 103
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 6,
+                            "text": "Station 7",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_6",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 147,
+                                "y": 133
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 7,
+                            "text": "Station 8",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_7",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 147,
+                                "y": 163
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 8,
+                            "text": "Station 9",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_8",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 242,
+                                "y": 73
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 9,
+                            "text": "Station 10",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_9",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 242,
+                                "y": 103
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 10,
+                            "text": "Station 11",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_10",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 242,
+                                "y": 133
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 11,
+                            "text": "Station 12",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_11",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 242,
+                                "y": 163
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 12,
+                            "text": "Station 13",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_12",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 340,
+                                "y": 73
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 13,
+                            "text": "Station 14",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_13",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 340,
+                                "y": 103
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 14,
+                            "text": "Station 15",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_14",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 340,
+                                "y": 133
+                            }
+                        }
+                    },
+                    {
+                        "group": 0,
+                        "pressed": false,
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 15,
+                            "text": "Broadcast",
+                            "widget style name": "white_on_gray",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial_12",
+                                "height": 25,
+                                "item": {
+                                    "handle name": "ghRadiobutton_15",
+                                    "type": "RadiobuttonType"
+                                },
+                                "visible": true,
+                                "width": 90,
+                                "x": 340,
+                                "y": 163
+                            }
+                        }
+                    },
+                    {
+                        "widget": {
+                            "custom parameter string": "",
+                            "rendering function name": "",
+                            "tag": 0,
+                            "text": "Select",
+                            "widget style name": "",
+                            "window": {
+                                "enabled": true,
+                                "font name": "arial__14",
+                                "height": 30,
+                                "item": {
+                                    "handle name": "btnSelect",
+                                    "type": "PushbuttonType"
+                                },
+                                "visible": true,
+                                "width": 120,
+                                "x": 178,
+                                "y": 228
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "fonts": [
+            {
+                "anti-aliasing": true,
+                "character filter": "printable",
+                "engine name": "arial_12_arial12_aa",
+                "font file": "resources/arial.ttf",
+                "font type": "ttf",
+                "name": "arial_12",
+                "output format": "rle",
+                "relative path": "resources/arial_12_arial12_aa.c",
+                "size": 12
+            },
+            {
+                "anti-aliasing": true,
+                "character filter": "printable",
+                "engine name": "arial__14_arial14_aa",
+                "font file": "resources/arial.ttf",
+                "font type": "ttf",
+                "name": "arial__14",
+                "output format": "rle",
+                "relative path": "resources/arial__14_arial14_aa.c",
+                "size": 14
+            }
+        ],
+        "images": [
+            {
+                "cache": false,
+                "name": "token",
+                "path": "resources/token.bmp"
+            },
+            {
+                "cache": false,
+                "name": "token_w",
+                "path": "resources/token_w.bmp"
+            }
+        ],
+        "rendering functions": [
+        ],
+        "targets": [
+            {
+                "calibration data": {
+                    "ax": 1,
+                    "ay": 1,
+                    "bx": 1,
+                    "by": 1,
+                    "cx": 0,
+                    "cy": 0
+                },
+                "calibration mode": 0,
+                "compiler": "GFX_COMPILER_KEIL",
+                "cpu": "GFX_CPU_CORTEX_M7_FP",
+                "default font": "0",
+                "default widgetstyle": "0",
+                "endian": "GFX_CPU_ENDIAN_UNKNOWN",
+                "heap size": 0,
+                "height": 272,
+                "name": "Default",
+                "operating system": "GFX_USE_OS_UNKNOWN",
+                "orientation": "GDISP_ROTATE_0",
+                "startup color": "0x000000",
+                "use romfs": true,
+                "use widget tags": true,
+                "use word wrapping": true,
+                "width": 480
+            }
+        ],
+        "widget styles": [
+            {
+                "Background": "#ffffff",
+                "Disabled": {
+                    "Edge": "#808080",
+                    "Fill": "#e0e0e0",
+                    "Progress": "#c0e0c0",
+                    "Text": "#c0c0c0"
+                },
+                "Enabled": {
+                    "Edge": "#404040",
+                    "Fill": "#ff0000",
+                    "Progress": "#00e000",
+                    "Text": "#000000"
+                },
+                "Focus": "#2a8fcd",
+                "Name": "red_green",
+                "Pressed": {
+                    "Edge": "#404040",
+                    "Fill": "#00ff00",
+                    "Progress": "#00e000",
+                    "Text": "#404040"
+                }
+            },
+            {
+                "Background": "#606060",
+                "Disabled": {
+                    "Edge": "#808080",
+                    "Fill": "#e0e0e0",
+                    "Progress": "#c0e0c0",
+                    "Text": "#c0c0c0"
+                },
+                "Enabled": {
+                    "Edge": "#404040",
+                    "Fill": "#e0e0e0",
+                    "Progress": "#00e000",
+                    "Text": "#ffffff"
+                },
+                "Focus": "#2a8fcd",
+                "Name": "white_on_gray",
+                "Pressed": {
+                    "Edge": "#404040",
+                    "Fill": "#00ff00",
+                    "Progress": "#00e000",
+                    "Text": "#00ff00"
+                }
+            }
+        ]
+    },
+    "project file version": 1
+}
