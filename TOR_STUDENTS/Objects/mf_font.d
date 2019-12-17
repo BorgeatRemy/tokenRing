@@ -72,3 +72,6 @@
 .\objects\mf_font.o: C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src/gdisp/fonts/DejaVuSans12_aa.c
 .\objects\mf_font.o: C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src/gdisp/fonts/DejaVuSans16_aa.c
 .\objects\mf_font.o: C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src/gdisp/fonts/UI2.c
+.\objects\mf_font.o: ..\TOR_STUDENTS\userfonts.h
+.\objects\mf_font.o: ..\TOR_STUDENTS\resources/arial_12_arial12_aa.c
+.\objects\mf_font.o: ..\TOR_STUDENTS\resources/arial__14_arial14_aa.c

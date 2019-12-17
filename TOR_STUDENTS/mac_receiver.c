@@ -55,14 +55,6 @@ void MacReceiver(void *argument)
 			retCode = osMessageQueuePut(queue_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
 			CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 		}
-		else if((msgPtr[0]>>3) == gTokenInterface.myAddress)
-		{
-			//si on reçoit un msg de nous
-			queueMsg.anyPtr = msgPtr; 
-			queueMsg.type = DATABACK;
-			retCode = osMessageQueuePut(queue_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
-			CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-		}
 		else if((msgPtr[1]>>3) == gTokenInterface.myAddress){
 			//verify checksum 
 			checksumCalculate = calculateCRC(msgPtr);
@@ -91,6 +83,14 @@ void MacReceiver(void *argument)
 						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 						break; 	
 				}
+			}
+			else if((msgPtr[0]>>3) == gTokenInterface.myAddress)
+			{
+				//si on reçoit un msg de nous
+				queueMsg.anyPtr = msgPtr; 
+				queueMsg.type = DATABACK;
+				retCode = osMessageQueuePut(queue_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
+				CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 			}
 			else{
 				//send nack and received (1,0)

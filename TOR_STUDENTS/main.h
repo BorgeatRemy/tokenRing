@@ -73,7 +73,7 @@ struct TOKENINTERFACE
 	uint32_t	debugAddress;					///< current debug address
 	bool_t		debugMsgToSend;				///< did debug have to send a message
 	uint32_t	destinationAddress;		///< current destination address
-	uint8_t		station_list[15];			///< 0 to 15 
+	uint8_t		station_list[15];			///< 0 to 15
 };
 extern struct TOKENINTERFACE gTokenInterface;
 

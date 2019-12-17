@@ -266,7 +266,7 @@ ARM Macro Assembler    Page 5
 
 CMSIS\Driver\Include -IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include -IC:\Keil
 _v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include -IC:\Keil_v5\HessoValais\Extension_
-board\1.0.0\extension_board -IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include -IC:\K
+board\1.1.0\extension_board -IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include -IC:\K
 eil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IC:
 \Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc -IC:\Keil_v
 5\uGFX\uGFX_lib\2.0.0\ugfx -IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\ST

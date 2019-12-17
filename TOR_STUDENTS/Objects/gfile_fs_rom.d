@@ -64,3 +64,6 @@
 .\objects\gfile_fs_rom.o: C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile\../../src/gaudio/gaudio.h
 .\objects\gfile_fs_rom.o: C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile\gfile_fs.h
 .\objects\gfile_fs_rom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\gfile_fs_rom.o: ..\TOR_STUDENTS\romfs_files.h
+.\objects\gfile_fs_rom.o: ..\TOR_STUDENTS\resources/token.h
+.\objects\gfile_fs_rom.o: ..\TOR_STUDENTS\resources/token_w.h
