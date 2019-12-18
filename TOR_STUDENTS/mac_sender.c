@@ -13,25 +13,14 @@
 #include "ext_led.h"
 
 osMessageQueueId_t	queue_mem_macS_id; 
-const osMessageQueueAttr_t queue_mem_macS_id = {
-	.name = "memoristation in mac Sender  "  	
-};	
 
-uint8_t calculateCRC(uint8_t* data){
-		uint32_t checksum = 0; 
-		for(int i = 0; i < data[2]+3; i++)
-		{
-			checksum+=data[i]; 		
-		}
-		return checksum&0x3F; //get 6 LSB
-}
 //////////////////////////////////////////////////////////////////////////////////
 // THREAD MAC RECEIVER
 //////////////////////////////////////////////////////////////////////////////////
 void MacSender(void *argument)
 {
 		struct queueMsg_t queueMsg;							// queue message
-
+		osStatus_t retCode;
 		uint8_t * token; 
 		uint8_t * msgPtr; 
 		uint8_t * copyPtr; 
@@ -39,7 +28,6 @@ void MacSender(void *argument)
 	
 		char errorMsg[] = "MAC ERROR"; 
 		queue_mem_macS_id = osMessageQueueNew(4,sizeof(struct queueMsg_t),NULL); 
-		struct queueMsg_t queueMsg;							// queue message
 		for(;;){			
 			//----------------------------------------------------------------------------
 			// QUEUE READ										
@@ -50,36 +38,46 @@ void MacSender(void *argument)
 			msgPtr = queueMsg.anyPtr;
 			
 			switch(queueMsg.type){				
-				case TOKEN:				
+				case TOKEN:							
+					//update station list
 					msgPtr[gTokenInterface.myAddress+1] = (1 << TIME_SAPI) | (gTokenInterface.connected << CHAT_SAPI);				
 					memcpy(gTokenInterface.station_list,&msgPtr[1],15);
+					
+					//save token 
+					token = osMemoryPoolAlloc(memPool,osWaitForever); 
+					memcpy(token,msgPtr,16); 
+					
 					//free the memory used for the token message
 					retCode = osMemoryPoolFree(memPool,msgPtr);
 					CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
+					
+					//transmit to lcd
+					queueMsg.type = TOKEN_LIST; 
+					retCode = osMessageQueuePut(queue_lcd_id,&queueMsg,osPriorityNormal,osWaitForever);
+					CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
+
 					//-----------------------------------------------------------------------
 					// is a messag to send ?
 					//-----------------------------------------------------------------------
-					if(osMessageQueueGet(queue_mem_macS_id,&queueMsg,NULL)==osOk)
+					if(osMessageQueueGet(queue_mem_macS_id,&queueMsg,NULL,0)==osOK)
 					{						
-						/*get the pointer to memory pool*/
 						msgPtr = queueMsg.anyPtr;
 						
 						/*get a new dynamic mermory pool*/
 						sendPtr = osMemoryPoolAlloc(memPool,osWaitForever);	
 						
 						/*create a data frame*/
-						sendPtr[0] = gTokenInterface.myAddress<<3 +  (1 << TIME_SAPI) | (gTokenInterface.connected << CHAT_SAPI); 
-						sendPtr[1] = gTokenInterface.destinationAddress<<3 + queueMsg.sapi; 
-						sendPtr[2] = strlen(msgPtr); 									// lenght of message 
-						memcpy(&sendPtr[3],msgPtr,strlen(msgPtr)); 	// data
+						sendPtr[0] = (gTokenInterface.myAddress<<3)  + queueMsg.sapi; 
+						sendPtr[1] = (queueMsg.addr<<3) + queueMsg.sapi; 
+						sendPtr[2] = strlen((char*)msgPtr); 									// lenght of message 
+						memcpy(&sendPtr[3],msgPtr,strlen((char*)msgPtr)); 	// data
 
 						//calculate checksum and add in dynamic memory
-						sendPtr[3+sendPtr[2]] = calculateCRC(sendPtr)<<3&0xFC; 
+						sendPtr[3+sendPtr[2]] = (calculateCRC(sendPtr)<<3)&0xFC; 						
 						
-						//free the memory used for the data indication message
+						//free the memory used for the token message
 						retCode = osMemoryPoolFree(memPool,msgPtr);
 						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-						
 						//keep in memory the message send
 						copyPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
 						memcpy(copyPtr,sendPtr,sendPtr[2]+4); 	// data
@@ -93,11 +91,18 @@ void MacSender(void *argument)
 					}
 					else
 					{
-						//send token 
+							//give the token
+							queueMsg.anyPtr = token; 
+							queueMsg.type = TO_PHY;
+						
+							//transmit msg to physical layer
+							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
 					}
+
 					break;
 				case DATABACK:
-					switch(msgPtr[3+msgPtr[2]]&0x03){
+					switch(msgPtr[3+msgPtr[2]]&0x03){//check read and ack
 						case 0:
 						case 1: //send mac error
 							sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
@@ -106,12 +111,19 @@ void MacSender(void *argument)
 							queueMsg.anyPtr = sendPtr; 
 							queueMsg.type = MAC_ERROR;
 							
-							//transmit msg to physical layer
+							//transmit msg to lcd
 							retCode = osMessageQueuePut(queue_lcd_id,&queueMsg,osPriorityNormal,osWaitForever);
 							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
+						
+							//give the token
+							queueMsg.anyPtr = token; 
+							queueMsg.type = TO_PHY;
+						
+							//transmit msg to physical layer
+							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 						break; 
-						case 2: //message ack -> resend message
-								
+						case 2: //message ack -> resend message								
 							//keep in memory the message send
 							sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
 							memcpy(sendPtr,copyPtr,copyPtr[2]+4); 	// data
@@ -134,13 +146,15 @@ void MacSender(void *argument)
 						
 							//transmit msg to physical layer
 							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
-							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
+							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 						break; 		
 					}
 						
 					break; 
 				case DATA_IND:
-					//put msg in queue 
+						//transmit msg to memory queue
+						retCode = osMessageQueuePut(queue_mem_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
+						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
 					break; 
 				case START: 
 					gTokenInterface.connected = 1;
@@ -149,6 +163,26 @@ void MacSender(void *argument)
 					gTokenInterface.connected = 0;
 					break; 
 				case NEW_TOKEN:
+						/*get a new dynamic mermory pool*/
+						sendPtr = osMemoryPoolAlloc(memPool,osWaitForever);	
+						sendPtr[0] = TOKEN_TAG; 						
+						//initialise station list to 0
+						for(int i=0;i<15;i++){
+							sendPtr[i+1] = 0; 
+							gTokenInterface.station_list[i] = 0; 
+						}
+						
+						//put our station sapi status in station and in the token
+						gTokenInterface.station_list[gTokenInterface.myAddress] = (1 << TIME_SAPI) | (gTokenInterface.connected << CHAT_SAPI); 
+						sendPtr[1+gTokenInterface.myAddress] =  (1 << TIME_SAPI) | (gTokenInterface.connected << CHAT_SAPI); 
+						
+						//give the token
+						queueMsg.anyPtr = sendPtr; 
+						queueMsg.type = TO_PHY;				
+						
+						//transmit msg to physical layer						
+						retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 					break; 
 				default:
 					break; 

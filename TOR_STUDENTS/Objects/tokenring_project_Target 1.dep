@@ -31,7 +31,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_spi.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -131,7 +131,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -228,7 +228,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -292,7 +292,7 @@ I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput\ginput_dial.h)(0x5AB228C4)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc\gadc.h)(0x59DF360A)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio\gaudio.h)(0x59DF360A)
 I (gui.h)(0x5A9FD30A)
-F (.\chat_sender.c)(0x5B3A49D4)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\chat_sender.o --omf_browse .\objects\chat_sender.crf --depend .\objects\chat_sender.d)
+F (.\chat_sender.c)(0x5DF8ECDF)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\chat_sender.o --omf_browse .\objects\chat_sender.crf --depend .\objects\chat_sender.d)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x5B3A5C54)
 I (.\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x5886EED6)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5DEF9610)
@@ -326,7 +326,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5CEBCE36)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -424,7 +424,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -522,7 +522,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5CEBCE36)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -620,7 +620,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -684,7 +684,7 @@ I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput\ginput_dial.h)(0x5AB228C4)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc\gadc.h)(0x59DF360A)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio\gaudio.h)(0x59DF360A)
 I (gui.h)(0x5A9FD30A)
-F (.\mac_sender.c)(0x5DF8C159)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\mac_sender.o --omf_browse .\objects\mac_sender.crf --depend .\objects\mac_sender.d)
+F (.\mac_sender.c)(0x5DFA2755)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\mac_sender.o --omf_browse .\objects\mac_sender.crf --depend .\objects\mac_sender.d)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x5B3A5C54)
 I (.\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x5886EED6)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5DEF9610)
@@ -717,7 +717,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -782,7 +782,7 @@ I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc\gadc.h)(0x59DF360A)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio\gaudio.h)(0x59DF360A)
 I (gui.h)(0x5A9FD30A)
 I (.\RTE\Hesso_pack\ext_led.h)(0x5A16B8C8)
-F (.\mac_receiver.c)(0x5DEFB450)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\mac_receiver.o --omf_browse .\objects\mac_receiver.crf --depend .\objects\mac_receiver.d)
+F (.\mac_receiver.c)(0x5DFA2748)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\mac_receiver.o --omf_browse .\objects\mac_receiver.crf --depend .\objects\mac_receiver.d)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x5B3A5C54)
 I (.\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x5886EED6)
 I (.\RTE\_Target_1\RTE_Components.h)(0x5DEF9610)
@@ -815,7 +815,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -912,7 +912,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -1011,7 +1011,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -1110,7 +1110,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)
@@ -1175,7 +1175,7 @@ I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc\gadc.h)(0x59DF360A)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio\gaudio.h)(0x59DF360A)
 I (gui.h)(0x5A9FD30A)
 I (.\RTE\Hesso_pack\ext_led.h)(0x5A16B8C8)
-F (.\main.h)(0x5B3A4352)()
+F (.\main.h)(0x5DFA00B5)()
 F (.\audio.c)(0x5B3A30A2)(--c99 -c --cpu Cortex-M7.fp.sp -g -O0 --apcs=interwork --split_sections -I .\RTE\uGFX_library -I ..\TOKENRING -I ..\TOR_STUDENTS-I.\RTE\CMSIS-I.\RTE\Compiler-I.\RTE\Device\STM32F746NGHx-I.\RTE\Hesso_pack-I.\RTE\_Target_1-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\CMSIS\5.5.1\CMSIS\RTOS2\RTX\Include-IC:\Keil_v5\HessoValais\Extension_board\1.1.0\extension_board-IC:\Keil_v5\Keil\ARM_Compiler\1.6.1\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\boards\base\STM32F746-Discovery-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\gdisp\STM32LTDC-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\drivers\ginput\touch\FT5336-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gadc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gaudio-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\fonts-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdisp\mcufont-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gdriver-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gevent-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gfile-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\ginput-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gmisc-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gos-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gqueue-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtimer-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gtrans-IC:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\src\gwin-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F746xx-o .\objects\audio.o --omf_browse .\objects\audio.crf --depend .\objects\audio.d)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x5B3A5C54)
 I (.\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x5886EED6)
@@ -1208,7 +1208,7 @@ I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_spi.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h)(0x5B3A5C54)
 I (C:\Keil_v5\Keil\STM32F7xx_DFP\2.11.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h)(0x5B3A5C54)
-I (main.h)(0x5B3A4352)
+I (main.h)(0x5DFA00B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEBCE3E)
 I (C:\Keil_v5\uGFX\uGFX_lib\2.0.0\ugfx\gfx.h)(0x5B029668)

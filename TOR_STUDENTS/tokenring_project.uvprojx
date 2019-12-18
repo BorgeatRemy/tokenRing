@@ -750,7 +750,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" name="extension_board\ext_keyboard.c">
+      <file attr="config" category="source" name="extension_board\ext_keyboard.c" version="1.0.0">
         <instance index="0">RTE\Hesso_pack\ext_keyboard.c</instance>
         <component Cclass="Hesso pack" Cgroup="Extension Board" Csub="Keyboard" Cvendor="HessoValais" Cversion="1.0.0" condition="spi2"/>
         <package name="Extension_board" schemaVersion="1.2" supportContact="mailto:pascal.sartoretti@hevs.ch" url="http://kpacks.hevs.ch/HessoValais.Extension_board.pdsc" vendor="HessoValais" version="1.1.0"/>
@@ -758,7 +758,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="extension_board\ext_keyboard.h">
+      <file attr="config" category="header" name="extension_board\ext_keyboard.h" version="1.0.0">
         <instance index="0">RTE\Hesso_pack\ext_keyboard.h</instance>
         <component Cclass="Hesso pack" Cgroup="Extension Board" Csub="Keyboard" Cvendor="HessoValais" Cversion="1.0.0" condition="spi2"/>
         <package name="Extension_board" schemaVersion="1.2" supportContact="mailto:pascal.sartoretti@hevs.ch" url="http://kpacks.hevs.ch/HessoValais.Extension_board.pdsc" vendor="HessoValais" version="1.1.0"/>
