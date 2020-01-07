@@ -28,11 +28,11 @@ void MacReceiver(void *argument)
 {
 	struct queueMsg_t queueMsg;							// queue message
 	osStatus_t retCode;											// return error code
-	uint8_t checksumCalculate; 
-	uint8_t * msg;
-	uint8_t * toPhy;
-	uint8_t * data;
-	uint8_t * msgPtr; 
+	uint8_t checksumCalculate; 							//varaible to save the checksum Calc
+	uint8_t * msg;													//pointer for  receipt message from queu
+	uint8_t * toPhy;												//pointer for send message to the physical layer
+	uint8_t * data;													//pointer for chat or time receiver
+	uint8_t * msgPtr; 											//pointer for the received message
 	for (;;)																// loop until doomsday
 	{
 		//----------------------------------------------------------------------------
@@ -42,8 +42,9 @@ void MacReceiver(void *argument)
     CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);		
 		
 		msgPtr = queueMsg.anyPtr; 
-		
-		if(msgPtr[0] == TOKEN_TAG){
+		//--------------Token Message ----------------------------------------------	
+		if(msgPtr[0] == TOKEN_TAG)
+		{
 			//save user data in a new memory pool
 			msg = osMemoryPoolAlloc(memPool,osWaitForever);	
 			memcpy(msg,msgPtr,16);
@@ -54,6 +55,7 @@ void MacReceiver(void *argument)
 			retCode = osMessageQueuePut(queue_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
 			CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 		}
+		
 		//-------------- Test if we recept our message ----------------------------------------------									
 		else if((msgPtr[0]>>3) == gTokenInterface.myAddress)
 		{
@@ -61,16 +63,22 @@ void MacReceiver(void *argument)
 				msg = osMemoryPoolAlloc(memPool,osWaitForever);	
 				memcpy(msg,msgPtr,msgPtr[2]+4);
 				
+				//check if the destination is us or everybody
 				if((msgPtr[1]>>3) == gTokenInterface.myAddress || msgPtr[1]>>3 == BROADCAST_ADDRESS) 
 				{
 						//verify checksum 
 						checksumCalculate = calculateCRC(msgPtr);
-						if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2){//checksum calcul == checksum receive				
+						//checksum calcul == checksum receive		
+						if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2)
+						{		
 							//send ack + read (1,1)
 							msg[3+msgPtr[2]] |= 0x03;
-
+							
+							//new memory pool for user data
 							data = osMemoryPoolAlloc(memPool,osWaitForever);
 							memcpy(data,&msgPtr[3],msgPtr[2]);
+							
+							//add a null caractere at the end of the user data
 							data[msgPtr[2]] = 0; 
 							
 							//send dataIndication
@@ -96,14 +104,15 @@ void MacReceiver(void *argument)
 							//send nack and received (1,0)
 							msg[3+msgPtr[2]] |= 0x02;					
 						}				
-				}	
-				//si on reçoit un msg de nous
+				}
+				
+				//send databack to mac sender
 				queueMsg.anyPtr = msg; 
 				queueMsg.type = DATABACK;
 				retCode = osMessageQueuePut(queue_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
 				CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 		}
-		//-------------- if we send a message or a broadcast -----------------------------------------
+		//-------------- if we receipt a message for us or a broadcast -----------------------------------------
 		else if((msgPtr[1]>>3) == gTokenInterface.myAddress || msgPtr[1]>>3 == BROADCAST_ADDRESS){		  
 			//save user data in a new memory pool
 			msg = osMemoryPoolAlloc(memPool,osWaitForever);	
@@ -112,31 +121,35 @@ void MacReceiver(void *argument)
 			// the message is for us --> answer with read and ack/nack
 			if((msgPtr[1]>>3) == gTokenInterface.myAddress)
 			{
+					//new memory pool to send the data to the physical layer
 					toPhy = osMemoryPoolAlloc(memPool,osWaitForever);	
 					memcpy(toPhy,msgPtr,msgPtr[2]+4);
+				
 					//verify checksum 
 					checksumCalculate = calculateCRC(msgPtr);
-					if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2){//checksum calcul == checksum receive				
+				
+					//checksum calcul == checksum receive		
+					if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2)
+					{		
 						//send ack + read (1,1)
 						toPhy[3+toPhy[2]] |= 0x03; 
-						queueMsg.anyPtr = toPhy; 
-						queueMsg.type = TO_PHY;
-						retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
-						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-
 					}		
-					else{		
+					else
+					{		
 						//send nack and received (1,0)
 						toPhy[3+msgPtr[2]] |= 0x02;
 						toPhy[3+msgPtr[2]] &= 0xFE; 
-						queueMsg.anyPtr = toPhy; 
-						queueMsg.type = TO_PHY;
-						retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
-						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-					}				
+					}
+					
+					//send to physical layer
+					queueMsg.anyPtr = toPhy; 
+					queueMsg.type = TO_PHY;
+					retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+					CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);					
 			}	
 			//send data to time or chat if the checksum is correct broadcast or myAddress
-			if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2){										
+			if(checksumCalculate == msgPtr[3+msgPtr[2]]>>2)
+			{										
 				//check which application must reiceved the message
 				switch(msgPtr[1]&0x7)
 				{
@@ -158,11 +171,12 @@ void MacReceiver(void *argument)
 			}		
 			else
 			{
+				//free memory pool of msg when check sum is wrong
 				retCode = osMemoryPoolFree(memPool,msg);
 				CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);				
 			}
 		}	
-
+		//free memory pool of msgPtr
 		retCode = osMemoryPoolFree(memPool,msgPtr);
 		CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 	}	

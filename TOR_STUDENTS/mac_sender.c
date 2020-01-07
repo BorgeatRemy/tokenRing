@@ -21,10 +21,10 @@ void MacSender(void *argument)
 {
 		struct queueMsg_t queueMsg;							// queue message
 		osStatus_t retCode;
-		uint8_t * token; 
-		uint8_t * msgPtr; 
-		uint8_t * copyPtr; 
-		uint8_t * sendPtr;
+		uint8_t * token; 			//pointer to the token
+		uint8_t * msgPtr; 		//pointer to the received message
+		uint8_t * copyPtr; 		//save a copy of the send message
+		uint8_t * sendPtr;		//pointer to send the message
 	
 		char errorMsg[] = "MAC ERROR"; 
 		queue_mem_macS_id = osMessageQueueNew(4,sizeof(struct queueMsg_t),NULL); 
@@ -35,10 +35,13 @@ void MacSender(void *argument)
 			retCode = osMessageQueueGet(queue_macS_id,&queueMsg,NULL,osWaitForever); 	
 			CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 
+			//recept the message
 			msgPtr = queueMsg.anyPtr;
 			
-			switch(queueMsg.type){				
-				case TOKEN:							
+			//check the type of the message we recepted
+			switch(queueMsg.type){
+				
+				case TOKEN: //if we recept the token						
 					//update station list
 					msgPtr[gTokenInterface.myAddress+1] = (1 << TIME_SAPI) | (gTokenInterface.connected << CHAT_SAPI);				
 					memcpy(gTokenInterface.station_list,&msgPtr[1],15);
@@ -82,6 +85,7 @@ void MacSender(void *argument)
 						copyPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
 						memcpy(copyPtr,sendPtr,sendPtr[2]+4); 	// data
 						
+						//to send the message to the physical layer
 						queueMsg.anyPtr = sendPtr; 
 						queueMsg.type = TO_PHY;
 						
@@ -101,9 +105,11 @@ void MacSender(void *argument)
 					}
 
 					break;
-				case DATABACK:
-					if ((msgPtr[1]>>3) == BROADCAST_ADDRESS)
-					{											
+					
+				case DATABACK: //if we recept a databack
+					if ((msgPtr[1]>>3) == BROADCAST_ADDRESS)	//control if it's a broadcast
+					{					
+							//free the memory of copyptr when message is ok
 							retCode = osMemoryPoolFree(memPool,copyPtr);
 							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 						
@@ -121,6 +127,7 @@ void MacSender(void *argument)
 							case 0:
 							case 1: //send mac error							
 												
+								//free the memory of copyptr when mac error
 								retCode = osMemoryPoolFree(memPool,copyPtr);
 								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 							
@@ -173,17 +180,21 @@ void MacSender(void *argument)
 					retCode = osMemoryPoolFree(memPool,msgPtr);
 					CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 					break; 
-				case DATA_IND:
+				
+				case DATA_IND:	//when chat or time send us a value
 						//transmit msg to memory queue
 						retCode = osMessageQueuePut(queue_mem_macS_id,&queueMsg,osPriorityNormal,osWaitForever);
 						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
 					break; 
+				
 				case START: 
 					gTokenInterface.connected = 1;
 					break;
+				
 				case STOP:
 					gTokenInterface.connected = 0;
 					break; 
+				
 				case NEW_TOKEN:
 						/*get a new dynamic mermory pool*/
 						sendPtr = osMemoryPoolAlloc(memPool,osWaitForever);	
