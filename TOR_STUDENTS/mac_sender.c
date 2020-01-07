@@ -73,7 +73,7 @@ void MacSender(void *argument)
 						memcpy(&sendPtr[3],msgPtr,strlen((char*)msgPtr)); 	// data
 
 						//calculate checksum and add in dynamic memory
-						sendPtr[3+sendPtr[2]] = (calculateCRC(sendPtr)<<3)&0xFC; 						
+						sendPtr[3+sendPtr[2]] = (calculateCRC(sendPtr)<<2)&0xFC; 						
 						
 						//free the memory used for the token message
 						retCode = osMemoryPoolFree(memPool,msgPtr);
@@ -102,44 +102,11 @@ void MacSender(void *argument)
 
 					break;
 				case DATABACK:
-					switch(msgPtr[3+msgPtr[2]]&0x03){//check read and ack
-						case 0:
-						case 1: //send mac error
-							sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
-							memcpy(sendPtr,errorMsg,strlen(errorMsg)); 
-							
-							queueMsg.anyPtr = sendPtr; 
-							queueMsg.type = MAC_ERROR;
-							
-							//transmit msg to lcd
-							retCode = osMessageQueuePut(queue_lcd_id,&queueMsg,osPriorityNormal,osWaitForever);
-							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
-						
-							//give the token
-							queueMsg.anyPtr = token; 
-							queueMsg.type = TO_PHY;
-						
-							//transmit msg to physical layer
-							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
-							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-						break; 
-						case 2: //message ack -> resend message								
-							//keep in memory the message send
-							sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
-							memcpy(sendPtr,copyPtr,copyPtr[2]+4); 	// data
-							
-							queueMsg.anyPtr = sendPtr; 
-							queueMsg.type = TO_PHY;
-							
-							//transmit msg to physical layer
-							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
-							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
-						break; 
-						case 3: //message Ok -> realese the token
-							//free message copy
+					if ((msgPtr[1]>>3) == BROADCAST_ADDRESS)
+					{											
 							retCode = osMemoryPoolFree(memPool,copyPtr);
 							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-							
+						
 							//give the token
 							queueMsg.anyPtr = token; 
 							queueMsg.type = TO_PHY;
@@ -147,9 +114,64 @@ void MacSender(void *argument)
 							//transmit msg to physical layer
 							retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
 							CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
-						break; 		
 					}
-						
+					else
+					{
+						switch(msgPtr[3+msgPtr[2]]&0x03){//check read and ack
+							case 0:
+							case 1: //send mac error							
+												
+								retCode = osMemoryPoolFree(memPool,copyPtr);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
+							
+								sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
+								memcpy(sendPtr,errorMsg,strlen(errorMsg)); 
+								
+								queueMsg.anyPtr = sendPtr; 
+								queueMsg.type = MAC_ERROR;
+								
+								//transmit msg to lcd
+								retCode = osMessageQueuePut(queue_lcd_id,&queueMsg,osPriorityNormal,osWaitForever);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
+							
+								//give the token
+								queueMsg.anyPtr = token; 
+								queueMsg.type = TO_PHY;
+							
+								//transmit msg to physical layer
+								retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
+							break; 
+							case 2: //message ack -> resend message								
+								//keep in memory the message send
+								sendPtr = osMemoryPoolAlloc(memPool,osWaitForever); 
+								memcpy(sendPtr,copyPtr,copyPtr[2]+4); 	// data
+								
+								queueMsg.anyPtr = sendPtr; 
+								queueMsg.type = TO_PHY;
+								
+								//transmit msg to physical layer
+								retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);	
+							break; 
+							case 3: //message Ok -> realese the token
+								//free message copy													
+								retCode = osMemoryPoolFree(memPool,copyPtr);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
+								
+								//give the token
+								queueMsg.anyPtr = token; 
+								queueMsg.type = TO_PHY;
+							
+								//transmit msg to physical layer
+								retCode = osMessageQueuePut(queue_phyS_id,&queueMsg,osPriorityNormal,osWaitForever);
+								CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
+							break; 		
+						}
+					}	
+					//free message copy					
+					retCode = osMemoryPoolFree(memPool,msgPtr);
+					CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 					break; 
 				case DATA_IND:
 						//transmit msg to memory queue
@@ -185,8 +207,8 @@ void MacSender(void *argument)
 						CheckRetCode(retCode,__LINE__,__FILE__,CONTINUE);
 					break; 
 				default:
-					break; 
-			}			
+					break;				
+			}							
 		}	
 }
 
